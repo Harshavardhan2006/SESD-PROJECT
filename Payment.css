@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Work Sans';
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px; /* reduced gap for better responsiveness */
+    justify-content: space-between;
+}
+
+header .logo img {
+    max-width: 150px;
+    width: 120px;
+    height: auto;
+}
+
+header h2 {
+    font-size: 18px;
+    color: #000000;
+    margin: 0;
+    text-align: left;
+}
+
+.payment-methods .methods {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.payment-methods .methods img {
+    max-width: 60px;
+    width: 18%;
+    min-width: 40px;
+    height: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.expiry {
+    display: flex;
+    gap: 10px;
+}
+
+.expiry select {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+}
+
+button.btn {
+    width: 50%;
+    max-width: 260px;
+    padding: 12px;
+    background-color: #664343;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 16px auto 0 auto; /* centers the button */
+}
+
+button.btn:hover {
+    background-color: #5a3329;
+}
+
+button.btn:active {
+    transform: translateY(3px);
+}
+
+.popup {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 320px; 
+    width: 90%; 
+}
+
+.popup-content p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #5c3a30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #472e26;
+}
+
+.popup-content button:active {
+    transform: translateY(3px);
+}
+
+/* Responsive rules */
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+    header .logo img {
+        width: 110px;
+    }
+    .container {
+        max-width: 420px;
+        padding: 18px;
+    }
+    .payment-methods .methods img {
+        max-width: 55px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    header .logo {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        text-align: center;
+    }
+
+    header h2 {
+        font-size: 16px;
+    }
+
+    header .logo img {
+        width: 100px;
+    }
+
+    .container {
+        margin: 12px;
+        padding: 14px;
+    }
+
+    .payment-methods .methods {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .payment-methods .methods img {
+        width: 48px;
+        min-width: 40px;
+    }
+
+    .expiry {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button.btn {
+        width: 80%;
+        max-width: none;
+    }
+
+    input, select {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
