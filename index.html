@@ -42,7 +42,7 @@
 
         <div class="booking-form">
             <h2>Book your car</h2>
-            <form>
+            <form action="Vehicles.html" method="get">
                 <select id="cartype" name="cartype" required>
                     <option value="">Car type</option>
                     <option value="All Vehicles">All Vehicles</option>
@@ -73,12 +73,19 @@
                     <option value="Charminar">Charminar</option>
                 </select>
 
-                <input type="text" id="rental-date" name="rental-date" placeholder="Rental date" required>
-                <i class='bx bxs-calendar calendar-icon1'></i>
+                <div class="date-row">
+                    <div class="date-field">
+                        <label for="rental-date">Rental date</label>
+                        <input type="date" id="rental-date" name="rental-date" placeholder="Rental date" required>
+                    </div>
 
-                <input type="text" id="rental-date" name="return-date" placeholder="Return date" required>
-                <i class='bx bxs-calendar calendar-icon2'></i>
-                <a href="Vehicles.html"><button class="b2">Book now</button></a>
+                    <div class="date-field">
+                        <label for="return-date">Return date</label>
+                        <input type="date" id="return-date" name="return-date" placeholder="Return date" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="b2">Search</button>
             </form>
         
         </div>
@@ -156,9 +163,9 @@
         <h5>
             Enjoy hassle-free rentals with our easy booking system, flexible options, and top-notch customer service.
         </h5>
-        <form>
+        <form action="Vehicles.html" method="get">
             <input type="text" id="City" name="City" placeholder="City" required>
-            <a href="Vehicles.html"><button>Search</button></a>
+            <button type="submit">Search</button>
         </form>
     </div>
 
@@ -254,10 +261,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; Copyright Zen Drives 2024.</p>
+            <p>&copy; Copyright Zen Drives 2025.</p>
         </div>
     </footer>
 
 </body>
 </html>
+
 

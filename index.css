@@ -124,12 +124,14 @@ nav ul {
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     width: 400px;
-    height: 550px;
+    height: 570px;
     box-align: center;
     font-family: 'Inter';
     position: absolute;
     left: 63%;
     top: 15%;
+    display: block;
+    gap: 12px;
 }
 
 .booking-form h2 {
@@ -179,22 +181,6 @@ nav ul {
 
 .b2:active {
     transform: translateY(3px);
-}
-
-.calendar-icon1 {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 82%;
-    top: 61%;
-}
-
-.calendar-icon2 {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 82%;
-    top: 74.5%;
 }
 
 .Info-block {
@@ -503,4 +489,108 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+/* Restyled rental & return date inputs */
+.booking-form {
+    display: block;
+    gap: 12px;
+}
+
+/* make the two date fields sit side-by-side on wide screens */
+.booking-form input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: calc(50% - 8px); /* two columns */
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #000000;
+    box-sizing: border-box;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+/* small margin between the two date inputs */
+#return-date {
+    margin-left: 16px;
+}
+
+/* improved focus state */
+.booking-form input[type="date"]:focus {
+    outline: none;
+    border-color: #664343;
+    box-shadow: 0 0 0 3px rgba(102,67,67,0.08);
+}
+
+/* hide native clear / calendar button styling on some browsers to keep look consistent */
+.booking-form input[type="date"]::-webkit-clear-button,
+.booking-form input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* style the calendar picker indicator (WebKit) to be slightly tinted */
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.1) sepia(0.2) saturate(0.6) hue-rotate(10deg);
+    opacity: 0.9;
+    cursor: pointer;
+    padding-right: 6px;
+}
+
+/* Styled rental & return date fields (site look & responsive) */
+.date-row{
+    display: flex;
+    flex-direction: column;      /* stack rental then return */
+    gap: 12px;
+    align-items: flex-start;     /* align to left edge */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 5.8%;         /* align with other inputs */
+}
+
+.date-field{
+    width: 89%;                  /* match select/input width above */
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    
+}
+
+.date-field label{
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+    font-family: 'Work Sans', Inter, Arial, sans-serif;
+}
+
+/* date input styling kept but made full-width of the date-field */
+.date-field input[type="date"]{
+    width: 100%;                 /* fill the 90% container */
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background-color: #fafafa;
+    font-size: 0.95rem;
+    color: #000000;
+    box-shadow: 0 8px 18px rgba(102,67,67,0.06);
+    transition: border-color .15s ease, box-shadow .15s ease, transform .06s;
+    box-sizing: border-box;
+}
+
+/* ensure return-date has no left-offset */
+#return-date {
+    margin-left: 0;
+}
+
+/* responsive: keep stacked layout on small screens */
+@media (min-width: 900px){
+    /* if you ever want side-by-side on very wide screens, change here;
+       currently requirement is stacked so we keep column layout by default */
 }
